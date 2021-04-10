@@ -1,4 +1,3 @@
-#%%
 #create path to file
 import os
 import csv
@@ -25,9 +24,9 @@ with open(data_path) as csvfile:
      
      #count months
     for row in budgetdata:
-        months = months + 1
+        months += 1
         #total profits/losses
-        total_profits = total_profits + float(row[1])
+        total_profits += float(row[1])
        
         #find change in profits. skip first month
         if first == True:
@@ -69,5 +68,3 @@ with open(outpath, 'w') as outF:
     outF.write(f"Greatest Decrease in Profits: {big_loss[0]} (${big_loss[1]})\n")
     print(f"Greatest Decrease in Profits: {big_loss[0]} (${big_loss[1]})")
 
-
-# %%
